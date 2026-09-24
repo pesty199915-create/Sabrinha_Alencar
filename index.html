@@ -3,15 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>Clarinha VIP</title>
+    <title>Sabrina VIP</title>
 
     <!-- ========================================================================= -->
-    <!-- 🔗 CONFIGURE SEU LINK DE REDIRECIONAMENTO AQUI (MUDOU AQUI, MUDA TUDO):   -->
+    <!-- 🔗 CONFIGURE SEUS LINKS DE REDIRECIONAMENTO AQUI:                         -->
     <!-- ========================================================================= -->
     <script>
-        const REDIRECT_URL = "https://serverflow.dad/l/bda3183f?shk=hn3elsbu";
-        
-        const DIRECT_ACCESS_URL = "https://xyronbot.com.br/c/sabrina-alencar";
+        const REDIRECT_URL         = "https://serverflow.dad/l/bda3183f?shk=hn3elsbu"; // Telegram VIP Brasil
+        const DIRECT_ACCESS_URL    = "https://xyronbot.com.br/c/sabrina-alencar";        // Acesso direto Brasil
+        const FOREIGN_REDIRECT_URL = "COLOQUE_SEU_LINK_AQUI";                           // <-- COLOQUE SEU LINK PARA ESTRANGEIROS AQUI
     </script>
     <!-- ========================================================================= -->
 
@@ -177,6 +177,7 @@
             gap: 6px;
             background: linear-gradient(180deg, #ffffff 30%, #f3e8ff 100%);
             -webkit-background-clip: text;
+            background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
@@ -226,35 +227,50 @@
             fill: currentColor;
         }
 
-       /* Botão Principal de Conversão (CTA) */
+        /* CONTAINER DOS BOTÕES PRINCIPAIS */
+        .cta-buttons-container {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        /* Botão Principal de Conversão (CTA) */
         .cta-button {
             width: 100%;
             background: var(--primary-gradient);
             color: #ffffff;
             text-decoration: none;
-            padding: 17px 22px;
+            padding: 16px 18px;
             border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 15px;
+            font-size: 13.5px;
             font-weight: 800;
-            letter-spacing: 0.5px;
+            letter-spacing: 0.3px;
             text-transform: uppercase;
-            box-shadow: 0 8px 28px var(--glow-purple-pink), 0 0 1px rgba(255,255,255,0.4) inset;
+            box-shadow: 0 8px 28px var(--glow-purple-pink), 0 0 1px rgba(255, 255, 255, 0.4) inset;
             border: 1px solid rgba(255, 255, 255, 0.25);
             transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
             position: relative;
             overflow: hidden;
-            margin-bottom: 30px;
             cursor: pointer;
             animation: pulse-button 2.4s infinite;
         }
 
+        .cta-button:nth-child(2) {
+            animation-delay: 0.8s;
+        }
+
+        .cta-button:nth-child(3) {
+            animation-delay: 1.6s;
+        }
+
         @keyframes pulse-button {
-            0% { transform: scale(1); box-shadow: 0 8px 24px rgba(219, 39, 119, 0.45); }
+            0%, 100% { transform: scale(1); box-shadow: 0 8px 24px rgba(219, 39, 119, 0.45); }
             50% { transform: scale(1.02); box-shadow: 0 12px 36px rgba(168, 85, 247, 0.7); }
-            100% { transform: scale(1); box-shadow: 0 8px 24px rgba(219, 39, 119, 0.45); }
         }
 
         .cta-button::after {
@@ -276,126 +292,46 @@
 
         @keyframes shimmer {
             0% { left: -60%; }
-            30% { left: 140%; }
-            100% { left: 140%; }
+            30%, 100% { left: 140%; }
         }
 
-        .cta-left {
+        .cta-content {
             display: flex;
             align-items: center;
-            gap: 12px;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            text-align: center;
         }
 
-        .cta-left svg {
-            width: 22px;
-            height: 22px;
-            fill: #ffffff;
+        .btn-icon-white {
+            width: 24px;
+            height: 24px;
+            border-radius: 50%;
+            background-color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
         }
 
-        .cta-arrow svg {
-            width: 18px;
-            height: 18px;
+        .btn-icon-white svg {
+            width: 14px;
+            height: 14px;
+            fill: #9333ea;
+        }
+
+        .cta-inline-arrow {
+            width: 15px;
+            height: 15px;
             fill: #ffffff;
+            margin-left: 2px;
+            flex-shrink: 0;
             transition: transform 0.2s ease;
         }
 
-        .cta-button:hover .cta-arrow svg {
+        .cta-button:hover .cta-inline-arrow {
             transform: translateX(4px);
-        }
-
-        /* Acesso alternativo */
-        .alternative-access {
-            width: 100%;
-            text-align: center;
-            margin-top: -12px;
-            margin-bottom: 26px;
-        }
-
-        .alternative-text {
-            font-size: 14px;
-            font-weight: 600;
-            color: #cbd5e1;
-            margin-bottom: 12px;
-        }
-
-        .alternative-button {
-            width: 100%;
-            background: var(--primary-gradient);
-            color: #ffffff;
-            text-decoration: none;
-            padding: 17px 22px;
-            border-radius: 16px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 12px;
-            font-size: 15px;
-            font-weight: 800;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            border: 1px solid rgba(255, 255, 255, 0.25);
-            box-shadow: 0 8px 28px var(--glow-purple-pink), 0 0 1px rgba(255,255,255,0.4) inset;
-            backdrop-filter: blur(10px);
-            transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            animation: pulse-alternative 2.4s infinite;
-        }
-
-        .alternative-button::after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -60%;
-            width: 40%;
-            height: 200%;
-            background: linear-gradient(60deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-            transform: rotate(25deg);
-            animation: shimmer-alternative 3.5s infinite;
-        }
-
-        @keyframes pulse-alternative {
-            0% {
-                transform: scale(1);
-                box-shadow: 0 8px 24px rgba(219, 39, 119, 0.45);
-            }
-            50% {
-                transform: scale(1.02);
-                box-shadow: 0 12px 36px rgba(168, 85, 247, 0.7);
-            }
-            100% {
-                transform: scale(1);
-                box-shadow: 0 8px 24px rgba(219, 39, 119, 0.45);
-            }
-        }
-
-        @keyframes shimmer-alternative {
-            0% { left: -60%; }
-            30% { left: 140%; }
-            100% { left: 140%; }
-        }
-
-        .alternative-button:hover,
-        .alternative-button:active {
-            transform: translateY(-2px) scale(1.02);
-            box-shadow: 0 12px 36px rgba(168, 85, 247, 0.7);
-        }
-
-        .alternative-button svg {
-            width: 22px;
-            height: 22px;
-            fill: #ffffff;
-            flex-shrink: 0;
-            position: relative;
-            z-index: 1;
-        }
-
-        .alternative-button span {
-            position: relative;
-            z-index: 1;
-            flex: 1;
-            text-align: center;
         }
 
         /* Divisor DESTAQUES */
@@ -463,13 +399,13 @@
             display: block;
         }
 
-        /* Classe de Blur Especial de 20-30% */
+        /* Classe de Blur Especial */
         .media-blur {
             filter: blur(9px);
             transform: scale(1.08);
         }
 
-        /* Badge Censor / Aviso de Blur */
+        /* Badge Censor */
         .censor-badge {
             position: absolute;
             top: 18px;
@@ -657,6 +593,13 @@
             color: #64748b;
             text-align: center;
         }
+
+        @media (max-width: 380px) {
+            .slider-wrapper { height: 430px; }
+            .cta-button { padding: 14px 12px; font-size: 12.5px; }
+            .slide-title { font-size: 15px; }
+            .slide-cta-link { font-size: 11px; }
+        }
     </style>
 </head>
 <body>
@@ -673,7 +616,6 @@
         <div class="avatar-wrapper">
             <div class="avatar-glow"></div>
             <div class="avatar-img-box">
-                <!-- FOTO DE PERFIL: -->
                 <img id="avatar-img" src="https://cdn.jsdelivr.net/gh/pesty199915-create/midia@main/images/f0994b6c-6cf4-47dd-8851-54bca8dd361a.jpg" alt="Perfil">
             </div>
             <div class="verified-badge">
@@ -684,7 +626,7 @@
         </div>
 
         <!-- Nome e Bio -->
-        <h1 class="profile-name">Clarinha VIP</h1>
+        <h1 class="profile-name">Sabrina VIP</h1>
         
         <p class="profile-bio">
             Se isso aqui já te prendeu, imagina o que eu não posso postar no Instagram... 🔥
@@ -699,35 +641,57 @@
             </a>
             <a class="social-btn go-redirect" title="Telegram VIP">
                 <svg viewBox="0 0 24 24">
-                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.34-.635.34l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.941z"/>
+                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.34-.635.34l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.941z"/>
                 </svg>
             </a>
         </div>
 
-        <!-- Botão CTA Principal -->
-        <a class="cta-button go-redirect">
-            <div class="cta-left">
-                <svg viewBox="0 0 24 24">
-                    <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.34-.635.34l.213-3.053 5.56-5.023c.242-.213-.054-.333-.373-.121l-6.871 4.326-2.962-.924c-.643-.204-.657-.643.136-.953l11.57-4.458c.538-.196 1.006.128.832.941z"/>
-                </svg>
-                <span>ENTRAR NO TELEGRAM VIP 🔞</span>
-            </div>
-            <div class="cta-arrow">
-                <svg viewBox="0 0 24 24">
-                    <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
-                </svg>
-            </div>
-        </a>
+        <!-- ============================================================
+             SEÇÃO DE BOTÕES PRINCIPAIS
+             ============================================================ -->
+        <div class="cta-buttons-container">
 
-        <!-- Acesso alternativo -->
-        <div class="alternative-access">
-            <p class="alternative-text">Não tem Telegram? Acesse por aqui então.</p>
-            <a id="direct-access-button" class="alternative-button" href="COLOQUE_SEU_LINK_AQUI" target="_blank" rel="noopener">
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                    <path d="M12 2a10 10 0 1 0 10 10A10.011 10.011 0 0 0 12 2zm1 15h-2v-6h2zm0-8h-2V7h2z"/>
-                </svg>
-                <span>ACESSAR DIRETAMENTE</span>
+            <!-- BOTAO 1: TELEGRAM VIP (BRASIL) -->
+            <a class="cta-button go-redirect">
+                <div class="cta-content">
+                    <span class="btn-icon-white">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg" alt="Telegram" style="width: 15px; height: 15px; filter: invert(27%) sepia(87%) saturate(5412%) hue-rotate(269deg) brightness(92%) contrast(98%);">
+                    </span>
+                    <span>ENTRAR NO TELEGRAM VIP 🔞 🇧🇷</span>
+                    <svg class="cta-inline-arrow" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </div>
             </a>
+
+            <!-- BOTAO 2: NÃO TEM TELEGRAM (ACESSO DIRETO) -->
+            <a class="cta-button go-direct">
+                <div class="cta-content">
+                    <span class="btn-icon-white">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+                        </svg>
+                    </span>
+                    <span>NÃO TEM TELEGRAM? CLIQUE AQUI! 🤍 🇧🇷</span>
+                    <svg class="cta-inline-arrow" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </div>
+            </a>
+
+            <!-- BOTAO 3: GRINGO TELEGRAM -->
+            <a class="cta-button go-foreign">
+                <div class="cta-content">
+                    <span class="btn-icon-white">
+                        <img src="https://cdn.jsdelivr.net/npm/simple-icons@latest/icons/telegram.svg" alt="Telegram" style="width: 15px; height: 15px; filter: invert(27%) sepia(87%) saturate(5412%) hue-rotate(269deg) brightness(92%) contrast(98%);">
+                    </span>
+                    <span>NOT BRAZILIAN? CLICK HERE 😈 😇</span>
+                    <svg class="cta-inline-arrow" viewBox="0 0 24 24">
+                        <path d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z"/>
+                    </svg>
+                </div>
+            </a>
+
         </div>
 
         <!-- Seção DESTAQUES -->
@@ -834,29 +798,30 @@
 
     <!-- Script de Navegação e Redirecionamento Automático -->
     <script>
-        // Link do acesso alternativo
-        document.addEventListener('DOMContentLoaded', () => {
-            const button = document.getElementById('direct-access-button');
-            if (button) button.href = DIRECT_ACCESS_URL;
-        });
-
-        // Função universal de redirecionamento
-        function goToLink() {
-            if (typeof REDIRECT_URL !== 'undefined' && REDIRECT_URL) {
-                window.open(REDIRECT_URL, '_blank');
+        function openUrl(targetUrl, event) {
+            if (event) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+            if (typeof targetUrl !== 'undefined' && targetUrl) {
+                window.open(targetUrl, '_blank', 'noopener,noreferrer');
             }
         }
 
-        // Aplica o link automaticamente em todos os elementos com a classe .go-redirect
         document.addEventListener('DOMContentLoaded', () => {
+            // Redirecionamento 1: Telegram VIP Brasil
             document.querySelectorAll('.go-redirect').forEach(element => {
-                if (element.tagName === 'A') {
-                    element.setAttribute('href', REDIRECT_URL);
-                    element.setAttribute('target', '_blank');
-                    element.setAttribute('rel', 'noopener');
-                } else {
-                    element.addEventListener('click', goToLink);
-                }
+                element.addEventListener('click', (e) => openUrl(REDIRECT_URL, e));
+            });
+
+            // Redirecionamento 2: Direto Brasil
+            document.querySelectorAll('.go-direct').forEach(element => {
+                element.addEventListener('click', (e) => openUrl(DIRECT_ACCESS_URL, e));
+            });
+
+            // Redirecionamento 3: Estrangeiros / Gringo
+            document.querySelectorAll('.go-foreign').forEach(element => {
+                element.addEventListener('click', (e) => openUrl(FOREIGN_REDIRECT_URL, e));
             });
         });
 
